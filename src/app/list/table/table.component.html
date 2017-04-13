@@ -1,0 +1,26 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Campername</th>
+        <th id="thirtydays" (click)="toggleToday()">points in past 30 days</th>
+        <th id="allTime" (click)="toggleAllTime()">All time points</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="check">
+     <tr *ngFor="let fcc of fcc|async">
+       <td><img src="{{fcc.img}}"/></td>
+       <td>{{fcc.username}}</td>
+       <td>{{fcc.recent}}</td>
+       <td>{{fcc.alltime}}</td>
+     </tr>
+    </tbody>
+    <tbody *ngIf="check===false">
+     <tr *ngFor="let fcc of fcc|async">
+       <td><img src="{{fcc.img}}"/></td>
+       <td>{{fcc.username}}</td>
+       <td>{{fcc.recent}}</td>
+       <td>{{fcc.alltime}}</td>
+     </tr>
+    </tbody>
+  </table>
